@@ -11,11 +11,11 @@ function App() {
   
 
   return (
-    <>
+    <div className='d-flex flex-column justify-content-between vh-100 bg-dark'>
       <Header />
       <Home />
       <Footer />
-    </>
+    </div>
   )
 }
 

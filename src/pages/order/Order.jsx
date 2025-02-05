@@ -11,7 +11,7 @@ function Order() {
 
   return (
     <>
-      
+      <button className='btn btn-primary'>Order-test</button>
     </>
   )
 }

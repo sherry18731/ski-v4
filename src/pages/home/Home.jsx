@@ -1,9 +1,9 @@
 
 
 
-import SkiHouse from '../skihouse/SkiHouse';          <SkiHouse />
-import Coach from '../coach/Coach';                   <Coach />
-import Order from '../order/Order';                   <Order />
+import SkiHouse from '../skihouse/SkiHouse';          
+import Coach from '../coach/Coach';                   
+import Order from '../order/Order';                   
 
 
 
@@ -20,9 +20,14 @@ function Home() {
   
 
   return (
-    <>
-      
-    </>
+    <div className='container mb-4'>
+      <div className='d-flex flex-column gap-3 w-50 align-items-center m-auto'>
+        <button className='btn btn-error'>Home-test</button>
+        <Coach />
+        <Order />
+        <SkiHouse />
+      </div>
+    </div>
   )
 }
 
