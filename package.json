@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"json-server --watch ./src/API/snowBuddy.json\"",
+    "dev": "concurrently \"vite\" \"json-server --watch ./src/api/snowBuddy.json\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
