@@ -1,9 +1,9 @@
 
 
 
-import SkiHouse from './pages/skihouse/SkiHouse';          <SkiHouse />
-import Coach from './pages/coach/Coach';                   <Coach />
-import Order from './pages/order/Order';                   <Order />
+import SkiHouse from '../skihouse/SkiHouse';          <SkiHouse />
+import Coach from '../coach/Coach';                   <Coach />
+import Order from '../order/Order';                   <Order />
 
 
 
