@@ -460,5 +460,531 @@
         }
       ]
     }
+  ],
+  "orders":[
+    {
+        "id": 1,
+        "orderTime": "2024/12/27 15:52:00",
+        "orderStatus":1,
+        "userId": 1,
+        "skiResortId": 1,          
+        "coachId": 1,
+        "class": {
+            "skiType": "single",             
+            "timeType": "allday",                     
+            "date": null,               
+            "startDate": "2025-01-25",    
+            "endDate": "2025-01-27",      
+            "days": 3                     
+        },
+        "studentsData":{
+            "studentNum": 2,
+            "skiLevel": 3,                
+            "students": [
+                {
+                    "name": "周餅倫",
+                    "gender": "male",
+                    "age": 33,
+                    "phone": "0988123456"
+                },
+                {
+                    "name": "蔡二琳",
+                    "gender": "female",
+                    "age": 18,
+                    "phone": "0928699123"
+                }
+            ]
+        },
+        "paymentDetail":{
+            "hours": 15,
+            "studentNum": 2,
+            "total": 60000
+        },
+        "contactInfo":{
+            "name": "周餅倫",
+            "phone": "0988123456",
+            "email": "helloworld@gmail.com",
+            "lineId": "hexschool666",
+            "note": "方便連絡的時間：請於 09:00 ~ 12:00 聯絡我，其他時間請勿打擾，謝謝"
+        },
+        "is_checked": true,
+        "paymentMethod": 1, 
+        "isPaid": true
+    },
+    {
+        "id": 2,
+        "orderTime": "2025/01/15 10:30:00",
+        "orderStatus": 0,
+        "userId": 2,
+        "skiResortId": 2,
+        "coachId": 2,
+        "class": {
+          "skiType": "double",
+          "timeType": "halfDayAM",
+          "date": "2025-02-01",
+          "startDate": null,
+          "endDate": null,
+          "days": 0.5
+        },
+        "studentsData": {
+          "studentNum": 1,
+          "skiLevel": 1,
+          "students": [
+            {
+              "name": "林大安",
+              "gender": "male",
+              "age": 28,
+              "phone": "0987001122"
+            }
+          ]
+        },
+        "paymentDetail": {
+          "hours": 3,
+          "studentNum": 1,
+          "total": 10000
+        },
+        "contactInfo": {
+          "name": "林大安",
+          "phone": "0987001122",
+          "email": "dax@gmail.com",
+          "lineId": "daxlin",
+          "note": "下午 14:00 以後聯絡我"
+        },
+        "is_checked": true,
+        "paymentMethod": 2,
+        "isPaid": true
+      },
+      {
+        "id": 3,
+        "orderTime": "2025/01/18 08:15:30",
+        "orderStatus": 0,
+        "userId": 3,
+        "skiResortId": 3,
+        "coachId": 3,
+        "class": {
+          "skiType": "single",
+          "timeType": "allday",
+          "date": null,
+          "startDate": "2025-02-10",
+          "endDate": "2025-02-14",
+          "days": 5
+        },
+        "studentsData": {
+          "studentNum": 4,
+          "skiLevel": 2,
+          "students": [
+            {
+              "name": "陳小芳",
+              "gender": "female",
+              "age": 35,
+              "phone": "0921345678"
+            },
+            {
+              "name": "李子豪",
+              "gender": "male",
+              "age": 40,
+              "phone": "0912456789"
+            },
+            {
+              "name": "張雅婷",
+              "gender": "female",
+              "age": 29,
+              "phone": "0932123456"
+            },
+            {
+              "name": "王小美",
+              "gender": "female",
+              "age": 20,
+              "phone": "0911223344"
+            }
+          ]
+        },
+        "paymentDetail": {
+          "hours": 25,
+          "studentNum": 4,
+          "total": 150000
+        },
+        "contactInfo": {
+          "name": "陳小芳",
+          "phone": "0921345678",
+          "email": "chenfang@yahoo.com.tw",
+          "lineId": "chenxfang",
+          "note": "早上 9:00 ~ 11:00 聯絡"
+        },
+        "is_checked": true,
+        "paymentMethod": 1,
+        "isPaid": true
+      },
+      {
+        "id": 4,
+        "orderTime": "2025/01/20 12:45:15",
+        "orderStatus": 0,
+        "userId": 4,
+        "skiResortId": 4,
+        "coachId": 4,
+        "class": {
+          "skiType": "double",
+          "timeType": "halfDayPM",
+          "date": "2025-02-20",
+          "startDate": null,
+          "endDate": null,
+          "days": 0.5
+        },
+        "studentsData": {
+          "studentNum": 2,
+          "skiLevel": 1,
+          "students": [
+            {
+              "name": "王建明",
+              "gender": "male",
+              "age": 25,
+              "phone": "0918888999"
+            },
+            {
+              "name": "林志強",
+              "gender": "male",
+              "age": 27,
+              "phone": "0923456789"
+            }
+          ]
+        },
+        "paymentDetail": {
+          "hours": 3,
+          "studentNum": 2,
+          "total": 20000
+        },
+        "contactInfo": {
+          "name": "王建明",
+          "phone": "0918888999",
+          "email": "jianming@hotmail.com.tw",
+          "lineId": "wmking",
+          "note": "隨時可聯絡"
+        },
+        "is_checked": true,
+        "paymentMethod": 2,
+        "isPaid": true
+      },
+      {
+        "id": 5,
+        "orderTime": "2025/01/22 09:10:08",
+        "orderStatus": 0,
+        "userId": 5,
+        "skiResortId": 5,
+        "coachId": 5,
+        "class": {
+          "skiType": "double",
+          "timeType": "allday",
+          "date": null,
+          "startDate": "2025-03-01",
+          "endDate": "2025-03-02",
+          "days": 2
+        },
+        "studentsData": {
+          "studentNum": 3,
+          "skiLevel": 4,
+          "students": [
+            {
+              "name": "林佩琪",
+              "gender": "female",
+              "age": 30,
+              "phone": "0933555566"
+            },
+            {
+              "name": "高子翔",
+              "gender": "male",
+              "age": 32,
+              "phone": "0922444455"
+            },
+            {
+              "name": "楊育賢",
+              "gender": "male",
+              "age": 34,
+              "phone": "0933445566"
+            }
+          ]
+        },
+        "paymentDetail": {
+          "hours": 10,
+          "studentNum": 3,
+          "total": 75000
+        },
+        "contactInfo": {
+          "name": "林佩琪",
+          "phone": "0933555566",
+          "email": "peiqi@gmail.com",
+          "lineId": "peiqilin",
+          "note": "下午 1:00 ~ 3:00 聯絡"
+        },
+        "is_checked": true,
+        "paymentMethod": 1,
+        "isPaid": true
+    },
+    {
+        "id": 6,
+        "orderTime": "2025/01/23 10:15:00",
+        "orderStatus": 0,
+        "userId": 1,
+        "skiResortId": 1,
+        "coachId": 1,
+        "class": {
+          "skiType": "single",
+          "timeType": "halfDayAM",
+          "date": "2025-02-05",
+          "startDate": null,
+          "endDate": null,
+          "days": 0.5
+        },
+        "studentsData": {
+          "studentNum": 2,
+          "skiLevel": 3,
+          "students": [
+            {
+              "name": "周明成",
+              "gender": "male",
+              "age": 31,
+              "phone": "0911223345"
+            },
+            {
+              "name": "徐小慧",
+              "gender": "female",
+              "age": 28,
+              "phone": "0933556677"
+            }
+          ]
+        },
+        "paymentDetail": {
+          "hours": 3,
+          "studentNum": 2,
+          "total": 15000
+        },
+        "contactInfo": {
+          "name": "周明成",
+          "phone": "0911223345",
+          "email": "mingcheng@gmail.com",
+          "lineId": "mccheng",
+          "note": "上午 9:00 ~ 12:00 聯絡"
+        },
+        "is_checked": true,
+        "paymentMethod": 2,
+        "isPaid": true
+      },
+      {
+        "id": 7,
+        "orderTime": "2025/01/24 11:45:00",
+        "orderStatus": 0,
+        "userId": 2,
+        "skiResortId": 2,
+        "coachId": 3,
+        "class": {
+          "skiType": "double",
+          "timeType": "allday",
+          "date": null,
+          "startDate": "2025-02-15",
+          "endDate": "2025-02-17",
+          "days": 3
+        },
+        "studentsData": {
+          "studentNum": 1,
+          "skiLevel": 2,
+          "students": [
+            {
+              "name": "李冠霖",
+              "gender": "male",
+              "age": 45,
+              "phone": "0921445566"
+            }
+          ]
+        },
+        "paymentDetail": {
+          "hours": 15,
+          "studentNum": 1,
+          "total": 50000
+        },
+        "contactInfo": {
+          "name": "李冠霖",
+          "phone": "0921445566",
+          "email": "guanlin@yahoo.com.tw",
+          "lineId": "guanlin45",
+          "note": "下午 2:00 以後聯絡"
+        },
+        "is_checked": true,
+        "paymentMethod": 1,
+        "isPaid": true
+    },
+    {
+      "id": 8,
+      "orderTime": "2025/01/25 09:30:00",
+      "orderStatus": 0,
+      "userId": 4,
+      "skiResortId": 2,
+      "coachId": 2,
+      "class": {
+        "skiType": "single",
+        "timeType": "halfDayPM",
+        "date": "2025-02-21",
+        "startDate": null,
+        "endDate": null,
+        "days": 0.5
+      },
+      "studentsData": {
+        "studentNum": 2,
+        "skiLevel": 3,
+        "students": [
+          {
+            "name": "劉冠宇",
+            "gender": "male",
+            "age": 29,
+            "phone": "0912345678"
+          },
+          {
+            "name": "陳怡靜",
+            "gender": "female",
+            "age": 26,
+            "phone": "0923456789"
+          }
+        ]
+      },
+      "paymentDetail": {
+        "hours": 3,
+        "studentNum": 2,
+        "total": 20000
+      },
+      "contactInfo": {
+        "name": "劉冠宇",
+        "phone": "0912345678",
+        "email": "guanyu@gmail.com",
+        "lineId": "guanyu92",
+        "note": "下午 2:00 ~ 5:00 聯絡"
+      },
+      "is_checked": true,
+      "paymentMethod": 1,
+      "isPaid": true
+    },
+    {
+      "id": 9,
+      "orderTime": "2025/01/25 11:00:00",
+      "orderStatus": 0,
+      "userId": 5,
+      "skiResortId": 3,
+      "coachId": 4,
+      "class": {
+        "skiType": "double",
+        "timeType": "allday",
+        "date": null,
+        "startDate": "2025-03-05",
+        "endDate": "2025-03-06",
+        "days": 2
+      },
+      "studentsData": {
+        "studentNum": 3,
+        "skiLevel": 4,
+        "students": [
+          {
+            "name": "黃志明",
+            "gender": "male",
+            "age": 32,
+            "phone": "0933445566"
+          },
+          {
+            "name": "李佳玲",
+            "gender": "female",
+            "age": 30,
+            "phone": "0944556677"
+          },
+          {
+            "name": "王俊傑",
+            "gender": "male",
+            "age": 28,
+            "phone": "0911223344"
+          }
+        ]
+      },
+      "paymentDetail": {
+        "hours": 10,
+        "studentNum": 3,
+        "total": 75000
+      },
+      "contactInfo": {
+        "name": "黃志明",
+        "phone": "0933445566",
+        "email": "zhiming@yahoo.com.tw",
+        "lineId": "zhiming99",
+        "note": "上午 9:00 ~ 11:00 聯絡"
+      },
+      "is_checked": true,
+      "paymentMethod": 2,
+      "isPaid": true
+    },
+    {
+      "id": 10,
+      "orderTime": "2025/01/25 14:15:00",
+      "orderStatus": 0,
+      "userId": 1,
+      "skiResortId": 1,
+      "coachId": 3,
+      "class": {
+        "skiType": "single",
+        "timeType": "allday",
+        "date": null,
+        "startDate": "2025-02-25",
+        "endDate": "2025-02-27",
+        "days": 3
+      },
+      "studentsData": {
+        "studentNum": 1,
+        "skiLevel": 2,
+        "students": [
+          {
+            "name": "周家豪",
+            "gender": "male",
+            "age": 24,
+            "phone": "0919998888"
+          }
+        ]
+      },
+      "paymentDetail": {
+        "hours": 15,
+        "studentNum": 1,
+        "total": 45000
+      },
+      "contactInfo": {
+        "name": "周家豪",
+        "phone": "0919998888",
+        "email": "jiahao@hotmail.com.tw",
+        "lineId": "jiahao88",
+        "note": "隨時可聯絡"
+      },
+      "is_checked": true,
+      "paymentMethod": 1,
+      "isPaid": true
+    }],
+  "classTimeType":{
+      "allday": {
+          "name": "整天 5hr (09:30 -12:00) (13:00-15:30)"
+      },
+      "halfDayAM": {
+          "name": "半天 3hr (09:00 -12:00)"            
+      },
+      "halfDayPM":{
+          "name": "半天 3hr (13:00 -16:00)"
+      }
+  },
+  "studentSkiLevel":{
+      "1": "零經驗",
+      "2": "初階",
+      "3": "初中階",
+      "4": "中階",
+      "5": "中高階",
+      "6": "高階"
+  },
+  "paymentWays":[
+      {
+          "id":1,
+          "name": "信用卡"
+      },
+      {
+          "id":2,
+          "name": "銀行轉帳"
+      }
   ]
 }
