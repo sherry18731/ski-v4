@@ -11,7 +11,11 @@ function Coach() {
 
   return (
     <>
-      <button className='btn btn-primary'>Coach-test</button>
+      <div className='container mb-4'>
+        <div className='d-flex flex-column gap-3 w-50 align-items-center m-auto'>
+        這裡有很多教練
+        </div>
+      </div>
     </>
   )
 }

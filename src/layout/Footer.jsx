@@ -33,17 +33,17 @@ function Footer() {
               <ul className='d-flex grid gap-0 column-gap-3 p-0 m-0 w-50 ms-5 ps-5'>
                 <li>
                   <NavLink>
-                    <i class="fs-4 text-brand-01 bi bi-facebook"></i>
+                    <i className="fs-4 text-brand-01 bi bi-facebook"></i>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink>
-                    <i class="fs-4 text-brand-01 bi bi-instagram"></i>
+                    <i className="fs-4 text-brand-01 bi bi-instagram"></i>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink>
-                    <i class="fs-4 text-brand-01 bi bi-line"></i>
+                    <i className="fs-4 text-brand-01 bi bi-line"></i>
                   </NavLink>
                 </li>
               </ul>

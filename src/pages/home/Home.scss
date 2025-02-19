@@ -1,0 +1,36 @@
+@import "bootstrap/scss/functions";
+@import "../../assets/variables";
+@import "../../assets/variables-dark";
+@import "bootstrap/scss/bootstrap";
+
+
+.banner {
+  .text-lg {
+    font-size: 64px;
+  }
+
+  .btn-outline-brand-01 {
+    &:hover {
+      background: #475F81 !important;
+      color: #779ECB !important;
+    }
+  }
+
+  .material-symbols-outlined {
+    font-size: 20px;
+    margin-bottom: 1px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+}
+
+.services {
+  padding: 95px;
+  .material-symbols-outlined {
+    font-size: 80px;
+    color: $brand-02;
+  }
+}

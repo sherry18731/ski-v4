@@ -3,11 +3,11 @@ import { NavLink } from 'react-router';
 import './Header.scss';
 
 function Header() {
-  
+  const activeClass = ({ isActive }) => `nav-link text-brand-01 ${ isActive ? "text-brand-02" : "" }`;
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg mb-4 py-4">
+      <nav className="navbar navbar-expand-lg py-4">
         <div className="container">
         <NavLink className="navbar-brand" to=''>
           <img src="../src/assets/images/logo-2.png" alt="logo" style={{width: '200px'}}/>
@@ -18,23 +18,24 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto gap-4">
               <li className="nav-item">
-                <NavLink className="nav-link text-brand-01" to='coach'>
-                <span class="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹</NavLink>
+
+                <NavLink className={ activeClass } to='coach'>
+                <span className="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-brand-01" to='skiHouse'>
-                <span class="material-symbols-outlined align-bottom me-1">Mountain_flag</span>雪場介紹</NavLink>
+                <NavLink className={ activeClass } to='ski-House'>
+                <span className="material-symbols-outlined align-bottom me-1">Mountain_flag</span>雪場介紹</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-brand-01" to=''>
-                <span class="material-symbols-outlined align-bottom me-1">book_5</span>推薦文章</NavLink>
+                <NavLink className={ activeClass } to='*'>
+                <span className="material-symbols-outlined align-bottom me-1">book_5</span>推薦文章</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-brand-01" to=''>
-                <span class="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識</NavLink>
+                <NavLink className={ activeClass } to='*'>
+                <span className="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-brand-01" to=''>登入</NavLink>
+                <NavLink className="nav-link text-brand-01" to='*'>登入</NavLink>
               </li>
             </ul>
           </div>
