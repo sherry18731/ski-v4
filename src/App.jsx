@@ -15,10 +15,9 @@ function App() {
   return (
     <div className='d-flex flex-column justify-content-between vh-100'>
       <Header />
-      <BookingPage />
-      <Outlet />
+        <Outlet />
       {/* <AboutLoading/> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
