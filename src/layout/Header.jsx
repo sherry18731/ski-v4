@@ -3,7 +3,10 @@ import { NavLink } from 'react-router';
 import './Header.scss';
 
 function Header() {
+
+
   const activeClass = ({ isActive }) => `nav-link text-brand-01 ${ isActive ? "text-brand-02" : "" }`;
+
 
   return (
     <>

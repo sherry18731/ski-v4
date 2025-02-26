@@ -1,4 +1,8 @@
 import App from '../App';
+import BookingPage from '../pages/order/BookingPage';
+import CheckoutFail from '../pages/order/CheckoutFail';
+import CheckoutPage from '../pages/order/CheckoutPage';
+import CheckoutSuccess from '../pages/order/CheckoutSuccess';
 import Home from '../pages/home/Home';
 import Coach from '../pages/coach/Coach';
 import CoachPage from '../pages/coach/coachComps/coachPage/CoachPage';
@@ -7,6 +11,7 @@ import SignInForm from '../pages/home/homeComps/SignInForm';
 import SignUpForm from '../pages/home/homeComps/SignUpForm';
 import ArticlePage from '../pages/article/ArticlePage';
 import NotFound from '../components/NotFound';
+
 
 
 const routes = [
@@ -19,6 +24,21 @@ const routes = [
         element:<Home />
       },
       {
+        path:'booking',
+        element:<BookingPage />
+      },
+      {
+        path:'checkout',
+        element:<CheckoutPage />
+      },
+      {
+        path:'checkout-success',
+        element:<CheckoutSuccess />
+      },
+      {
+        path:'checkout-fail',
+        element:<CheckoutFail />
+      },
         path: 'coach',
         element:<Coach />,
         children: [
