@@ -39,6 +39,7 @@ const routes = [
         path:'checkout-fail',
         element:<CheckoutFail />
       },
+      {
         path: 'coach',
         element:<Coach />,
         children: [
