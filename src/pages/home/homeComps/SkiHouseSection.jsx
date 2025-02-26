@@ -12,7 +12,7 @@ function SkiHouseSection() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/skiHouse');
+        const res = await axios.get('http://localhost:3000/skiResorts');
         setSkiHouse(res.data)
       } catch (error) {
         alert(`Error: ${error.message}`);

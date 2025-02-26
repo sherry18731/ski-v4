@@ -6,7 +6,7 @@ import CheckoutSuccess from '../pages/order/CheckoutSuccess';
 import Home from '../pages/home/Home';
 import Coach from '../pages/coach/Coach';
 import CoachPage from '../pages/coach/coachComps/coachPage/CoachPage';
-import SkiHouse from '../pages/skihouse/SkiHouse';
+import SkiResortListPage from '../pages/skihouse/SkiResortListPage';
 import SignInForm from '../pages/home/homeComps/SignInForm';
 import SignUpForm from '../pages/home/homeComps/SignUpForm';
 import ArticlePage from '../pages/article/ArticlePage';
@@ -51,7 +51,7 @@ const routes = [
       },
       {
         path:'ski-house',
-        element:<SkiHouse />
+        element:<SkiResortListPage />
       },
       {
         path: 'sign-in',

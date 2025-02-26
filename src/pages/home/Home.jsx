@@ -1,15 +1,11 @@
-import { Link } from 'react-router';
-import SkiHouse from '../skihouse/SkiHouse';          
-import Coach from '../coach/Coach';                   
-import Order from '../order/Order';   
 import BackToTopButton from '../../components/BackToTopButton';
 import BannerSection from './homeComps/BannerSection';
 import ServicesSection from './homeComps/ServicesSection';
-// 不知道為什麼用 SwiperSection一直因為大寫開頭就會莫名其妙的報錯###
 import SwiperSection from './homeComps/swiperSection';
 import SkiHouseSection from './homeComps/SkiHouseSection';
 import ArticleSection from './homeComps/ArticleSection';
 
+import '../../assets/all.scss';
 
 import './Home.scss';
 
