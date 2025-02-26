@@ -1,9 +1,12 @@
-
 import App from '../App';
+import Home from '../pages/home/Home';
 import Coach from '../pages/coach/Coach';
-import Home from '../pages/home/Home';       
-import SkiHouse from '../pages/skihouse/SkiHouse';
 import CoachPage from '../pages/coach/coachComps/coachPage/CoachPage';
+import SkiHouse from '../pages/skihouse/SkiHouse';
+import SignInForm from '../pages/home/homeComps/SignInForm';
+import SignUpForm from '../pages/home/homeComps/SignUpForm';
+import ArticlePage from '../pages/article/ArticlePage';
+import NotFound from '../components/NotFound';
 
 
 const routes = [
@@ -16,7 +19,7 @@ const routes = [
         element:<Home />
       },
       {
-        path: 'Coach',
+        path: 'coach',
         element:<Coach />,
         children: [
           {
@@ -26,10 +29,29 @@ const routes = [
         ]
       },
       {
-        path: 'SkiHouse',
+        path:'ski-House',
         element:<SkiHouse />
+      },
+      {
+        path: 'sign-in',
+        element: <SignInForm />
+      },
+      {
+        path: 'sign-up',
+        element: <SignUpForm />
+      },
+      {
+        path: 'article',
+        element: <ArticlePage />
+      },
+      {
+        path:'*',
+        element:<NotFound />
       }
     ]
+  },
+  {
+    path:'/admin'
   }
 ]
 
