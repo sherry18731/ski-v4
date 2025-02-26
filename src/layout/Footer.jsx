@@ -52,7 +52,7 @@ function Footer() {
             <div className='d-flex justify-content-between align-items-end w-100'>
               <div className='text-brand-01 text-small w-75'>
                 <p>Copyright@2024 Search for SnowBuddy All rights reserved.</p>
-                <p>本專題僅為學習用途，不做任何商業使用，圖片來源請見Github repo</p>
+                <p>本專題僅為學習用途，不做任何商業使用。</p>
               </div>
 
               <div className='d-flex flex-column grid gap-0 row-gap-1 text-brand-01 w-50 ms-5 ps-5'>
