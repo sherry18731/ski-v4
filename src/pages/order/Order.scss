@@ -34,6 +34,10 @@ a {
     width: 25%;
 }
 
+.w-70{
+    width: 70%;
+}
+
 .w-75{
     width: 75%;
 }
@@ -55,6 +59,9 @@ a {
 @include media-breakpoint-up(md) {
     .w-md-50{
         width: 50%;
+    }
+    .w-md-80{
+        width: 80%;
     }
   }
 

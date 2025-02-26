@@ -1,7 +1,14 @@
 import { Link } from 'react-router';
 import './Order.scss';
+// import { useEffect } from 'react';
 
 export default function BookingPage(){
+
+    // const { pathname } = useLocation();
+    // useEffect(()=>{
+    //     console.log(pathname);
+    // },[pathname]);
+
     return (
         <div className="container">
             {/* PC Step flow */}
@@ -57,8 +64,8 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="snowHouse" className="form-label mb-0">雪場</label>
-                                    <select className="form-select w-80" name='snowHouse' id='snowHouse' defaultValue="">
-                                        <option selected>請選擇雪場</option>
+                                    <select className="form-select w-70 w-md-80 " name='snowHouse' id='snowHouse' defaultValue="">
+                                        <option value="">請選擇雪場</option>
                                         <option value="1">妙高 休暇村妙高 RunRun滑雪場</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -72,7 +79,7 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="snowBoard" className="form-label mb-0">類型</label>
-                                    <select className="form-select w-80" name='snowBoard' id='snowBoard' defaultValue="">
+                                    <select className="form-select w-70 w-md-80 " name='snowBoard' id='snowBoard' defaultValue="">
                                         <option value="">請選擇雪板類型</option>
                                         <option value="single">單板</option>
                                         <option value="double">雙板</option>
@@ -86,7 +93,7 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="skiCoach" className="form-label mb-0">教練</label>
-                                    <div className='w-80 d-flex'>
+                                    <div className='w-70 w-md-80  d-flex'>
                                         <div className="flex-shrink-0 me-3">
                                             <img className="head-shot rounded-circle object-fit-cover" src="https://images.unsplash.com/photo-1735500810691-054f62b7bea1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfEJuLURqcmNCcndvfHxlbnwwfHx8fHw%3D" alt="教練名"/>
                                         </div>
@@ -106,13 +113,18 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="coachPrice" className="form-label mb-0">價格/每小時</label>
-                                    <input type="text" readOnly className="form-control-plaintext w-80 fs-2 text-brand-02 fw-bold" id="coachPrice" value="JYP 20,000"></input>
+                                    <input
+                                        defaultValue="JPY20,000"
+                                        type="text" 
+                                        className="form-control-plaintext w-70 w-md-80  fs-2 text-brand-02 fw-bold" 
+                                        id="coachPrice" 
+                                        />
                                 </div>
                             </div>
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="classTime" className="form-label mb-0">時間</label>
-                                    <select className="form-select w-80" name='classTime' id='classTime' defaultValue="">
+                                    <select className="form-select w-70 w-md-80 " name='classTime' id='classTime'>
                                         <option value="">請選擇課程時間</option>
                                         <option value="allday">整天 5hr (09:30 -12:00) (13:00-15:30)</option>
                                         <option value="halfDayAM">半天 3hr (09:00 -12:00)</option>
@@ -123,13 +135,13 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="startDate" className="form-label mb-0">開始日期</label>
-                                    <input type="date" className="form-control w-80" id="startDate" value="2025-01-01"/>
+                                    <input type="date" className="form-control w-70 w-md-80 " id="startDate" value="2025-01-01"/>
                                 </div>
                             </div>
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="classTime" className="form-label mb-0">結束日期</label>
-                                    <input type="date" className="form-control w-80" id="startDate" value="2025-01-01"/>
+                                    <input type="date" className="form-control w-70 w-md-80 " id="startDate" value="2025-01-01"/>
                                 </div>
                             </div>
                         </div>
@@ -141,8 +153,8 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="numOfStudents" className="form-label mb-0">上課人數</label>
-                                    <select className="form-select w-80" name='numOfStudents' id='numOfStudents' defaultValue="">
-                                        <option selected>請選擇人數</option>
+                                    <select className="form-select w-70 w-md-80 " name='numOfStudents' id='numOfStudents' defaultValue="">
+                                        <option value="">請選擇人數</option>
                                         <option value="1">1 人</option>
                                         <option value="2">2 人</option>
                                         <option value="3">3 人</option>
@@ -155,7 +167,7 @@ export default function BookingPage(){
                             <div className="mb-3">
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <label htmlFor="level" className="form-label mb-0">滑行程度</label>
-                                    <select className="form-select w-80" name='level' id='level' defaultValue="">
+                                    <select className="form-select w-70 w-md-80 " name='level' id='level' defaultValue="">
                                         <option value="">請選擇滑雪程度</option>
                                         <option value="1">零經驗</option>
                                         <option value="2">初階</option>
@@ -176,7 +188,7 @@ export default function BookingPage(){
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="lastName" className="form-label mb-0">姓名</label>
-                                        <div className='w-80 d-flex'>
+                                        <div className='w-70 w-md-80  d-flex'>
                                             <input type="text" className="form-control w-25 me-3 " id="lastName" placeholder="姓氏" />
                                             <input type="text" className="form-control w-75" placeholder="姓名" />
                                         </div>
@@ -185,7 +197,7 @@ export default function BookingPage(){
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="sex" className="form-label mb-0">性別</label>
-                                        <select className="form-select w-80" name='sex' id='sex' defaultValue="">
+                                        <select className="form-select w-70 w-md-80 " name='sex' id='sex' defaultValue="">
                                             <option value="">請選擇性別</option>
                                             <option value="male">男</option>
                                             <option value="female">女</option>
@@ -195,13 +207,18 @@ export default function BookingPage(){
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="age" className="form-label mb-0">年齡</label>
-                                        <input type="number" className="form-control w-80" name="age" id="age" placeholder="請輸入真實年齡" />
+                                        <input
+                                            type="number" 
+                                            className="form-control w-70 w-md-80 " 
+                                            name="age" 
+                                            id="age" 
+                                            placeholder="請輸入真實年齡" />
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="phone" className="form-label mb-0">聯絡電話</label>
-                                        <input type="tel" className="form-control w-80" name="phone" id="phone" placeholder="09xxxxxxxx" />
+                                        <input type="tel" className="form-control w-70 w-md-80 " name="phone" id="phone" placeholder="09xxxxxxxx" />
                                     </div>
                                 </div>
                             </div>  
@@ -210,7 +227,7 @@ export default function BookingPage(){
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="lastName" className="form-label mb-0">姓名</label>
-                                        <div className='w-80 d-flex'>
+                                        <div className='w-70 w-md-80  d-flex'>
                                             <input type="text" className="form-control w-25 me-3 " id="lastName" placeholder="姓氏" />
                                             <input type="text" className="form-control w-75" placeholder="姓名" />
                                         </div>
@@ -219,7 +236,7 @@ export default function BookingPage(){
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="sex" className="form-label mb-0">性別</label>
-                                        <select className="form-select w-80" name='sex' id='sex' defaultValue="">
+                                        <select className="form-select w-70 w-md-80 " name='sex' id='sex' defaultValue="">
                                             <option value="">請選擇性別</option>
                                             <option value="male">男</option>
                                             <option value="female">女</option>
@@ -229,13 +246,13 @@ export default function BookingPage(){
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="age" className="form-label mb-0">年齡</label>
-                                        <input type="number" className="form-control w-80" name="age" id="age" placeholder="請輸入真實年齡" />
+                                        <input type="number" className="form-control w-70 w-md-80 " name="age" id="age" placeholder="請輸入真實年齡" />
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <label htmlFor="phone" className="form-label mb-0">聯絡電話</label>
-                                        <input type="tel" className="form-control w-80" name="phone" id="phone" placeholder="09xxxxxxxx" />
+                                        <input type="tel" className="form-control w-70 w-md-80 " name="phone" id="phone" placeholder="09xxxxxxxx" />
                                     </div>
                                 </div>
                             </div>
