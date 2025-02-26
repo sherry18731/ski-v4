@@ -1,0 +1,83 @@
+import { createContext, useRef, useState } from 'react';
+import CoachList from './CoachList';
+
+
+
+
+export const InputValue = createContext({});
+
+function SerchInput() {
+  const sexRef = useRef(null);
+  const chargeRef = useRef(null);
+  const boardRef = useRef(null);
+  const houseRef = useRef(null);
+  const keyWordRef = useRef(null);
+
+  const [ allValue, setAllValue ] = useState({sex : '',
+                                              charge : '',
+                                              board : '',
+                                              house : '',
+                                              keyWord : ''});
+
+  
+    
+  return (
+    <InputValue.Provider value={{allValue}}>
+      <div className='w-100 d-flex justify-content-center gap-3 mt-5'>
+        <select className="form-select w-auto" ref={sexRef}>
+          <option value=''>性別</option>
+          <option value="male">男性</option>
+          <option value="female">女性</option>
+        </select>
+        
+        <select className="form-select w-auto" ref={chargeRef}>
+          <option value=''>收費</option>
+          <option value="feeLV1">10,000以下</option>
+          <option value="feeLV2">10,000 ~ 15,000</option>
+          <option value="feeLV3">15,000 ~ 20,000</option>
+          <option value="feeLV4">20,000 以上</option>
+        </select>
+
+        <select className="form-select w-auto" ref={boardRef}>
+          <option value=''>雪板類別</option>
+          <option value="單板">單板</option>
+          <option value="雙板">雙板</option>
+        </select>
+
+        <select className="form-select w-auto" ref={houseRef}>
+          <option value=''>教課雪場</option>
+          <option value="house1">藏王溫泉滑雪場</option>
+          <option value="house2">安比高原滑雪場</option>
+          <option value="house3">富良野滑雪場</option>
+          <option value="house4">湯澤中里滑雪場</option>
+          <option value="house5">野澤溫泉滑雪場</option>
+        </select>
+
+
+        <input defaultValue='' type="text" placeholder='🔎關鍵字...' ref={keyWordRef} />
+
+        <button className='btn btn-primary w-auto' onClick={() => {
+          setAllValue(pre => ({
+            ...pre,
+            sex : sexRef.current.value,
+            charge : chargeRef.current.value,
+            board : boardRef.current.value,
+            house : houseRef.current.value,
+            keyWord : keyWordRef.current.value
+            
+          }));
+        }}>搜尋</button>
+      </div>
+
+      
+
+      <CoachList />
+
+
+
+    </InputValue.Provider>
+  )
+  
+}
+
+export default SerchInput;

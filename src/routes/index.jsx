@@ -1,13 +1,12 @@
-import { element } from 'prop-types';
-import NotFound from '../components/NotFound';
-
 import App from '../App';
 import Home from '../pages/home/Home';
 import Coach from '../pages/coach/Coach';
+import CoachPage from '../pages/coach/coachComps/coachPage/CoachPage';
 import SkiHouse from '../pages/skihouse/SkiHouse';
 import SignInForm from '../pages/home/homeComps/SignInForm';
 import SignUpForm from '../pages/home/homeComps/SignUpForm';
 import ArticlePage from '../pages/article/ArticlePage';
+import NotFound from '../components/NotFound';
 
 
 const routes = [
@@ -16,12 +15,18 @@ const routes = [
     element: <App />,
     children: [
       {
-        path:'',
+        index: true,
         element:<Home />
       },
       {
-        path:'coach',
-        element:<Coach />
+        path: 'coach',
+        element:<Coach />,
+        children: [
+          {
+            path: ':id',
+            element: <CoachPage />
+          }
+        ]
       },
       {
         path:'ski-House',

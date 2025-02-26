@@ -20,19 +20,19 @@ function Home() {
 
   return (
     <>
-    <main className="bg-gray-05">
-      <BackToTopButton />
-    {/* banner */}
-      <BannerSection />
-    {/* 提供的服務 */}
-      <ServicesSection />
-    {/* 教練 */}          
-      <SwiperSection />
-    {/* 雪場 */}  
-      <SkiHouseSection />
-    {/* 文章 */}
-      <ArticleSection />
-    </main>
+      <main className="bg-gray-05">
+        <BackToTopButton />
+      {/* banner */}
+        <BannerSection />
+      {/* 提供的服務 */}
+        <ServicesSection />
+      {/* 教練 */}          
+        <SwiperSection />
+      {/* 雪場 */}  
+        <SkiHouseSection />
+      {/* 文章 */}
+        <ArticleSection />
+      </main>
     </>
   )
 }
