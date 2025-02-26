@@ -19,19 +19,19 @@ function Header() {
             <ul className="navbar-nav ms-auto gap-4">
               <li className="nav-item">
                 <NavLink className="nav-link text-brand-01" to='coach'>
-                <span class="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹</NavLink>
+                <span className="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link text-brand-01" to='skiHouse'>
-                <span class="material-symbols-outlined align-bottom me-1">Mountain_flag</span>雪場介紹</NavLink>
+                <span className="material-symbols-outlined align-bottom me-1">Mountain_flag</span>雪場介紹</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link text-brand-01" to=''>
-                <span class="material-symbols-outlined align-bottom me-1">book_5</span>推薦文章</NavLink>
+                <span className="material-symbols-outlined align-bottom me-1">book_5</span>推薦文章</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link text-brand-01" to=''>
-                <span class="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識</NavLink>
+                <span className="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link text-brand-01" to=''>登入</NavLink>
