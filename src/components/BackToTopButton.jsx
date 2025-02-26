@@ -36,12 +36,12 @@ const BackToTopButton = () => {
         padding: '10px 15px',
         transition: 'opacity 0.3s',
         opacity: isVisible ? 1 : 0,
-        weight:'48px',
+        width:'48px',
         height:'48px',
       }}
       onClick={scrollToTop}
     >
-      <i class="bi bi-chevron-up fw-bold"></i>
+      <i className="bi bi-chevron-up fw-bold"></i>
     </button>
   );
 };

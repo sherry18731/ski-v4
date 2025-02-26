@@ -6,8 +6,8 @@ export default function SkiResortListPage() {
     <>
       <div className="container d-flex flex-column align-items-center">
         <div className="w-100 d-flex justify-content-center">          
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-          <option selected>搜尋雪場</option>
+        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+          <option value={'搜尋雪場'} selected disabled>搜尋雪場</option>
           <option value="1">北海道</option>
           <option value="2">東北</option>
           <option value="3">新潟</option>
