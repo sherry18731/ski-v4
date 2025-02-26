@@ -15,6 +15,9 @@ function Home() {
         <Order />
         <SkiHouse />
       </div> */}
+
+
+      2222
     </div>
   )
 }
