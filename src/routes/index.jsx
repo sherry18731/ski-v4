@@ -49,7 +49,7 @@ const routes = [
         ]
       },
       {
-        path:'ski-House',
+        path:'ski-house',
         element:<SkiHouse />
       },
       {

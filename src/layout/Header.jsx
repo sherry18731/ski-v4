@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router';
 
+
 import './Header.scss';
 
 function Header() {
 
 
   const activeClass = ({ isActive }) => `nav-link text-brand-01 ${ isActive ? "text-brand-02" : "" }`;
+
 
 
   return (
@@ -33,6 +35,7 @@ function Header() {
               <li className="nav-item">
                 <NavLink className={ activeClass } to='coach'>
                 <span className="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹</NavLink>
+
               </li>
 
               <li className="nav-item">
