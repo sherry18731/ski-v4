@@ -1019,7 +1019,7 @@
     "hasChildCareServices":true,
     "hasChildPark":true
     },
-    "selectCoach":[1,3,5]
+    "selectCoach":[1,3,8]
     },{
     "id": 2,
     "chineseName": "夕張滑雪道",
