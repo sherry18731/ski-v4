@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import axios from 'axios';
 
 function SignInForm() {
-  const [emailSignIn, setEmailSignIn] = useState('');
-  const [passwordSignIn, setPasswordSignIn] = useState('');
+  const [emailSignIn, setEmailSignIn] = useState('exam@mail.com');
+  const [passwordSignIn, setPasswordSignIn] = useState('00000000');
   const [responseMessage, setResponseMessage] = useState('');
   const [isErrorMessage, setIsErrorMessage] = useState(false);
   const [token, setToken] = useState('');
@@ -58,9 +58,11 @@ function SignInForm() {
                 <Link to="*" className="text-gray-02 text-decoration-none"><small>忘記密碼？</small></Link>
               </div>
             </div>
-            <button type="button" className="btn btn-brand-01 home-btn-hover rounded-pill align-self-center w-25 mb-4" onClick={signIn}>
+            {/* <button type="button" className="btn btn-brand-01 home-btn-hover rounded-pill align-self-center w-25 mb-4" onClick={signIn}>
               登入
-            </button>
+            </button> */}
+            {/* 功能未完成前先用連結前往預約頁面 */}
+            <Link to='/booking' className="btn btn-brand-01 home-btn-hover rounded-pill align-self-center w-25 mb-4">登入</Link>
             <Link to='/sign-up' className="text-brand-02 text-decoration-none align-self-center">註冊</Link>
           </form>
           {responseMessage && (

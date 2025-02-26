@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import BackToTopButton from '../../../components/BackToTopButton';
 
 function ArticleSection() {
   const imagesData = [
@@ -29,6 +30,8 @@ function ArticleSection() {
   ]
 
   return (
+    <>
+    <BackToTopButton />
     <section className="py-5" style={{background:"url('https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/Rectangle%204.png?alt=media&token=573736d0-99bf-4e55-9b40-2217764e23db') no-repeat center center/cover"}}>
       <div className="container d-flex flex-column align-items-center">
         <div className="border-1 border-bottom border-gray-03 w-50 mb-5">
@@ -75,6 +78,7 @@ function ArticleSection() {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
