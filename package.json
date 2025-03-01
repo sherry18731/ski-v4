@@ -11,14 +11,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/interaction": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
-
     "aos": "^3.0.0-beta.6",
-
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "fullpage.js": "^4.0.33",

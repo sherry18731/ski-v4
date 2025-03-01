@@ -1,67 +1,96 @@
+import { useState, useEffect } from "react";
 import { NavLink } from 'react-router';
-
-
+import logo from '../assets/images/logo-2.png';
 import './Header.scss';
 
 function Header() {
+  const activeClass = ({ isActive }) => `nav-link text-brand-01 ${isActive ? "text-brand-02" : ""}`;
 
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
-  const activeClass = ({ isActive }) => `nav-link text-brand-01 ${ isActive ? "text-brand-02" : "" }`;
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
 
+  const handleLinkClick = () => {
+    setIsNavbarOpen(false);
+  };
 
+  // 監聽窗口大小的變化
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 992) {
+        setIsNavbarOpen(true); // 在桌面斷點時強制展開
+      } else {
+        setIsNavbarOpen(false); // 在移動設備上折疊
+      }
+    };
+
+    // 初始檢查
+    handleResize();
+
+    // 添加事件監聽器
+    window.addEventListener("resize", handleResize);
+
+    // 清除事件監聽器
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
       <nav className="navbar navbar-expand-lg py-4">
         <div className="container">
-        <NavLink className="navbar-brand">
-          <img src="../src/assets/images/logo-2.png" alt="logo" style={{width: '200px'}}/>
-        </NavLink>
+          <NavLink className="navbar-brand" to="/">
+            <img src={logo} alt="logo" style={{ width: '200px' }} />
+          </NavLink>
 
           <button
             className="navbar-toggler border-0"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
+            onClick={toggleNavbar}
             aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
+          >
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto gap-4">
+          <div
+            className={`navbar-collapse ${isNavbarOpen ? "show" : ""}`}
+            id="navbarNav"
+          >
+            <ul className="navbar-nav ms-auto mt-5 mt-md-0 gap-4 text-center text-lg-start">
               <li className="nav-item">
-                <NavLink className={ activeClass } to='coach'>
-                <span className="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹</NavLink>
-
+                <NavLink className={activeClass} to="coach" onClick={handleLinkClick}>
+                  <span className="material-symbols-outlined align-bottom me-1">downhill_skiing</span>教練介紹
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className={ activeClass } to='ski-House'>
-                <span className="material-symbols-outlined align-bottom me-1">Mountain_flag</span>雪場介紹</NavLink>
+                <NavLink className={activeClass} to="ski-House" onClick={handleLinkClick}>
+                  <span className="material-symbols-outlined align-bottom me-1">Mountain_flag</span>雪場介紹
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className={ activeClass } to='article'>
-                <span className="material-symbols-outlined align-bottom me-1">book_5</span>推薦文章</NavLink>
+                <NavLink className={activeClass} to="article" onClick={handleLinkClick}>
+                  <span className="material-symbols-outlined align-bottom me-1">book_5</span>推薦文章
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className={ activeClass } to='*'>
-                <span className="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識</NavLink>
+                <NavLink className={activeClass} to="*" onClick={handleLinkClick}>
+                  <span className="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link text-brand-01" to='sign-in'>登入</NavLink>
+                <NavLink className="nav-link text-brand-01" to="sign-in" onClick={handleLinkClick}>登入</NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;

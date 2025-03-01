@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router';
+import logo from '../assets/images/logo.png';
 
 import './Footer.scss';
 
@@ -8,9 +9,9 @@ function Footer() {
   return (
     <>
       <footer className='bg-gray-05 py-4'>
-        <div className='container d-flex my-1'>
-          <NavLink className="d-flex align-items-center" to=''>
-              <img src="../src/assets/images/logo.png" alt="logo" style={{width:'150px'}}/>
+        <div className='container d-flex flex-column flex-md-row my-1'>
+          <NavLink className="d-flex align-items-center justify-content-center" to=''>
+              <img src={logo} alt="logo" style={{width:'150px'}}/>
           </NavLink>
           <div className='d-flex flex-column w-75 ms-auto'>
 
