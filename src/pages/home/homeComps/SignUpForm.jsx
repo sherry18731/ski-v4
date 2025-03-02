@@ -31,7 +31,7 @@ import axios from 'axios';
   return (
     <div className="container mb-5">
       <div className="row flex-column align-items-center">
-        <div className="col-4">
+        <div className="col-md-4 col-10">
           <form className="d-flex flex-column text-brand-01 mb-5">
             <h2 className="mb-4 text-brand-02 align-self-center">註冊</h2>
             <div className="form-group mb-2">

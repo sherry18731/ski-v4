@@ -77,8 +77,7 @@ function Header() {
               </li>
 
               <li className="nav-item">
-                <NavLink className={activeClass} to="*" onClick={handleLinkClick}>
-                  <span className="material-symbols-outlined align-bottom me-1">Health_and_safety</span>安全知識
+                <NavLink className={activeClass} to="about-us" onClick={handleLinkClick}><span className="material-symbols-outlined align-bottom me-1"><span class="material-symbols-outlined">group</span></span>關於我們
                 </NavLink>
               </li>
 

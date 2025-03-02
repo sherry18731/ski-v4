@@ -32,6 +32,12 @@
   }
 }
 
+.hover-brand-02 {
+  &:hover {
+    color: #779ECB !important;
+  }
+}
+
 .home-btn-hover {
   &:hover {
     background: #475F81 !important;
@@ -46,7 +52,6 @@
 }
 
 .services {
-  padding: 95px;
   .material-symbols-outlined {
     font-size: 80px;
     color: $brand-02;
