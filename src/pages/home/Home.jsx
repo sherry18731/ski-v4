@@ -4,6 +4,7 @@ import ServicesSection from './homeComps/ServicesSection';
 import SwiperSection from './homeComps/SwiperSection';
 import SkiHouseSection from './homeComps/SkiHouseSection';
 import ArticleSection from './homeComps/ArticleSection';
+import FAQ from './homeComps/FAQ';
 
 function Home() {
 
@@ -19,6 +20,8 @@ function Home() {
         <SwiperSection />
       {/* 雪場 */}  
         <SkiHouseSection />
+      {/* 常見問題 */}
+        <FAQ />
       {/* 文章 */}
         <ArticleSection />
       </main>
