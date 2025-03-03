@@ -43,6 +43,7 @@ import axios from 'axios';
                 className="form-control mt-3"
                 id="exampleInputEmail2"
                 placeholder="請輸入信箱"
+                autoComplete="current-username"
               />
             </div>
             <div className="form-group my-3">
@@ -54,6 +55,7 @@ import axios from 'axios';
                 className="form-control mt-2"
                 id="exampleInputPassword2"
                 placeholder="請輸入密碼"
+                autoComplete="current-password"
               />
             </div>
             <div className="form-group my-2 mb-4">

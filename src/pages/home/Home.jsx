@@ -20,10 +20,10 @@ function Home() {
         <SwiperSection />
       {/* 雪場 */}  
         <SkiHouseSection />
-      {/* 常見問題 */}
-        <FAQ />
       {/* 文章 */}
         <ArticleSection />
+      {/* 常見問題 */}
+        <FAQ />
       </main>
     </>
   )

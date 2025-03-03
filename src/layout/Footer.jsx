@@ -7,7 +7,7 @@ function Footer() {
 
   return (
     <>
-      <footer className='bg-gray-05 py-4'>
+      <footer className='bg-gray-04 py-4'>
         <div className='container d-flex flex-column flex-md-row my-1'>
           <NavLink className="d-flex align-items-center justify-content-center" to=''>
               <img src="../src/assets/images/logo.png" alt="logo" style={{width:'150px'}}/>
