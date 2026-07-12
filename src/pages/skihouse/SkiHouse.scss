@@ -1,17 +1,130 @@
-@import "../../assets/all.scss";
+@import "bootstrap/scss/functions";
+@import '../../assets/variables';
+
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+//雪場總覽
+.allResort {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allResort::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, $brand-01, $brand-02);
+  margin: 0 10px;
+}
+
+.allResort::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to left, $brand-01, $brand-02);
+  margin: 0 10px;
+}
+
+.resortFormSelect{
+  font-size: 16px;
+  line-height: 1.5; 
+  padding-right: 2rem;
+}
+
+.resortCard{
+  cursor: pointer;
+}
+
+
+
+
+//雪場內頁
+body, html {
+  overflow-x: hidden;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: inherit;
+  &:hover{
+    text-decoration: none; 
+  color: inherit; 
+  cursor: default; 
+  } 
+}
 
 .resortImg{
     height: 400px;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+    will-change: transform;
+    &:hover{
+      box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .infoRow,bookingRow{
+    overflow-x: hidden;
   }
 
 .card{
   border-width: .15rem;
 }
 
+.cardHeader{
+  border-radius:0.2rem 0.2rem 0 0 !important;
+}
+
 .tagBtn{
   color: $brand-02;
   &:hover{
     color: white;
+  }
+}
+
+// .coachProfileImg{
+//   transition: transform 0.3s ease-in-out;
+//     transform-origin: center;
+//     will-change: transform;
+//     &:hover{
+//       opacity: 70%;
+//       transform: scale(1.05);
+//       //box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+//     }
+// }
+
+.imgWrapper {
+  position: relative;
+  display: inline-block;
+
+  .coachNameOverlay {
+    position: absolute;
+    bottom: 10px; // 貼齊圖片底部
+    left: 0;
+    width: 100%; // 占滿整個圖片寬度
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.7); // 半透明白底
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: $brand-01;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover .coachNameOverlay {
+    opacity: 1;
   }
 }
 
@@ -23,19 +136,32 @@
   }
 }
 
+//Card 元件
 .resortCard{
   position: relative;
   border-color: $brand-02 !important;
+  border-radius:0.5rem;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  will-change: transform;
   &:hover{
     opacity: 70%;
+    transform: scale(1.05);
+  }
+  
+  .card-img-top{
+    width: 100%;
+    height: 250px;
+    border-radius:0.3rem 0.3rem 0 0 !important;
+    object-fit: cover;
   }
 }
+
 .label{
   position: absolute;
   top: 15px;
   left: 0;
-  width: 80px;
+  width: 90px;
   padding: 5px;
   border-radius: 0 20px 20px 0;
-  
 }

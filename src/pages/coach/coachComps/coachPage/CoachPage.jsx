@@ -2,260 +2,359 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { useEffect, useRef, useState } from 'react';
+import bootstrap5Plugin from '@fullcalendar/bootstrap5';
+import listPlugin from "@fullcalendar/list";
+import { useEffect, useRef } from 'react';
+import { Link, useParams } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
-// import Calendar from './Calendar';
+
+import { getCoach, getFavorites, getOneCoach, setIsFavorite } from './coachpageSlice';
+
 
 import './CoachPage.scss';
+
+
 
 
 function CoachPage () {
 
   const calendarRef = useRef();
 
+  const dispatch = useDispatch();
 
-  const [events, setEvents] = useState([
-    {
-      title: "數位課程 - 9:00 AM",
-      start: "2025-01-01",
-      end: "2025-01-01",
-    },
-    {
-      title: "線上研討會 - 2:00 PM",
-      start: "2025-02-01",
-      end: "2025-02-01",
-    },
-  ]);
+  const coach = useSelector(getCoach);
+  
+  const favorites = useSelector(getFavorites);
+  
+  const isFavorite = favorites?.find( item => item.id === coach.id);
+
+  const { id } = useParams();
+
+
+  
+
+
+
+
+
+  const fullStars = Math.floor(coach.rate?.stars);
+  const halfStar = coach.rate?.stars % 1 !== 0;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+
+
+
+
+  useEffect(() => {
+    dispatch(getOneCoach(id));
+  }, [dispatch, id]);
+
+
+
 
   const openCalendar = () => {
-      calendarRef.current.getApi().updateSize();
-    }
+    calendarRef.current.getApi().updateSize();
+  }
 
 
 
 
   return (
-    <div className="container">
-      <div className="row row-cols-1 w-75 m-auto">
-        <div className="col">
-          <div className="d-flex gap-5">
-            <div>
-              <img src="https://images.unsplash.com/photo-1739609579483-00b49437cc45?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="w-100 h-100" alt="#" />
-            </div>
-
-            <ul className="d-flex flex-column justify-content-between w-100 h-100 p-0 m-0  profile-ul ">
-              <li>
-                <h1>聖誕老人</h1>
+    <div className='bg-gray-05'>
+      <div className='container mt-3'>
+        <div className='d-flex justify-content-between align-items-center'>
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb m-0">
+              <li className='breadcrumb-item'>
+                <Link className='text-gray-03 coach-page-breadcrumb' to="/coach">教練介紹</Link>
               </li>
-
-              <li className='d-flex gap-3'>
-                <p>類型</p>
-                <p>單板教練</p>
-              </li>
-
-              <li className='d-flex gap-3'>
-                <p>性別</p>
-                <p>男</p>
-              </li>
-
-              <li className='d-flex gap-3'>
-                <p>證照</p>
-                <p>證照等級 5</p>
-              </li>
-
-              <li className='d-flex gap-3'>
-                <p>語言</p>
-                <p>華語 / 英語 / 日語</p>
-              </li>
-
-              <li className='d-flex gap-3'>
-                <p>評價</p>
-                <p>⭐⭐⭐⭐⭐ 4.5 (227)</p>
-              </li>
-
-              <li>
-                <p>JPY <span>17,666</span> /hr 起</p>
-              </li>
-
-              <li>
-                <button className='btn btn-white border border-2 rounded-pill py-3 px-4 w-100'>預約教練</button>
-              </li>
-
-            </ul>
-          </div>
-
-          <p className='mt-4 text-gray-02'>#魔法教學 #親切 #適合乖小孩 #安全保障 #HoHoHo</p>
-        </div>
-
-
-
-        <hr className='my-5' />
-
-
-
-        <div className='col pt-0'>
-          <ul className="nav nav-pills nav-justified">
-            <li className="nav-item">
-              <a className="nav-link active" data-bs-toggle="tab" href="#member">會員中心</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" onClick={openCalendar} data-bs-toggle="tab" href="#classes">預約課表</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-bs-toggle="tab" href="#exp">教練經歷</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-bs-toggle="tab" href="#license">教練證照</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-bs-toggle="tab" href="#photo">教學日常</a>
-            </li>
-          </ul>
-
-
-          <div className="tab-content mt-3">
-            <div id="member" className="container tab-pane active">
-              <p>
-                作為聖誕老人，我原本從未想過滑雪對我來說會是一件必要的事情。起初，每當看到小精靈們在雪坡上靈活地滑行，我內心總是充滿羨慕，但又不免感到害怕：我這圓滾滾的身材，能做到這麼輕盈嗎？第一次嘗試滑雪時，我摔得鼻青臉腫，雪橇倒了，帽子也飛了，甚至覺得自己根本不適合這項運動。但內心深處有個聲音告訴我：「聖誕老人不能放棄挑戰，要讓孩子們相信，年齡永遠不是學習的阻礙！」
-                <br />
-                經過幾次失敗後，我開始尋找方法。我觀察小精靈如何保持平衡，聽取馴鹿魯道夫的建議，假裝自己是在駕馭雪橇，而不是滑雪板。慢慢地，我的信心逐漸建立，當我成功滑下第一個雪坡時，那迎面而來的寒風和自由感讓我欣喜若狂。這一刻，我不僅戰勝了自己的恐懼，還感受到了滑雪的純粹樂趣。
-                <br />    
-                當技術越來越熟練時，我決定與小精靈們分享這份快樂。教他們滑雪並不容易，許多小精靈害怕摔跤，甚至對滑雪板充滿疑問。但我用自己的故事告訴他們，每一次摔倒都是通向成功的必經之路。我耐心地陪伴他們克服恐懼，看著他們從害怕到勇敢地滑行，內心充滿自豪。這段過程讓我明白，滑雪不僅是一項技能，更是一種精神——敢於挑戰、分享快樂，並讓每個人都找到自己的突破口。
-              </p>
-            </div>
-
-            <div id="classes" className="container tab-pane fade">
-              <FullCalendar
-                ref={calendarRef}
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                initialView="dayGridMonth"
-                headerToolbar={{
-                  left: "prev,next",
-                  center: "title",
-                  right: "today",
-                }}
-                events={events}
-                
-              />
-            </div>
-
-            <div id="exp" className="container tab-pane fade">
-              <h2>教練經歷</h2>
               
-              <ul>
-                <li>2017 美國 紐約滑雪場</li>
-                <li>2018 義大利 威尼斯滑雪場</li>
-                <li>2019 中國 北京滑雪場</li>
-                <li>2020 德國 漢堡滑雪場 ，法國 巴黎滑雪場，非洲 大草原滑雪場</li>
-                <li>2021 北極圈 北極熊家旁邊滑雪場</li>
-                <li>2022 太平洋 海洋中心滑雪場 ，加拿大 多倫多滑雪場</li>
-                <li>2023 北海道 富良野 ，留壽都，二世谷，旭川神居</li>
+              <li className="breadcrumb-item text-brand-02">
+                {coach.name}
+              </li>
+            </ol>
+          </nav>
+
+          <Link 
+            to='/coach/favorites'
+            className='btn btn btn-brand-01 py-2'
+          >
+            收藏的教練
+          </Link>
+        </div>
+        
+
+        <div className="row row-cols-1 m-auto mt-3  page-box">
+          <div className="col ">
+            <div className='profile-col'>
+              <div className="d-sm-flex m-auto gap-4 h-100 coach-profile-container">
+                <img
+                  className='rounded-4  coach-profile-img'
+                  src={coach.profileImg}
+                  alt={coach.name}
+                />
+                
+
+                <ul className="d-flex flex-column justify-content-between gap-3 gap-sm-0 p-0 m-0 mt-3 mt-sm-0 w-100 list-unstyled coach-profile-list">
+                  <li>
+                    <h1 className='fw-bold'>{coach.name}</h1>
+                  </li>
+
+                  <li className='d-flex gap-3'>
+                    <p className='bg-brand-02 text-white px-2 rounded-1'>類型</p>
+                    <p className='fw-bold'>
+                      {coach.skills?.map((skill, index) => (
+                        <span key={index}>
+                          {skill}{index !== coach.skills.length - 1 && " , "}
+                        </span>
+                      ))}
+                    </p>
+                  </li>
+
+                  <li className='d-flex gap-3'>
+                    <p className='bg-brand-02 text-white px-2 rounded-1'>性別</p>
+                    <p className='fw-bold'>{coach.sex}</p>
+                  </li>
+
+                  <li className='d-flex gap-3'>
+                    <p className='bg-brand-02 text-white px-2 rounded-1'>證照</p>
+                    <p className='fw-bold'>證照等級 {coach.LV}</p>
+                  </li>
+
+                  <li className='d-flex gap-3'>
+                    <p className='bg-brand-02 text-white px-2 rounded-1'>語言</p>
+
+                    <p className='fw-bold'>
+                      {coach.lang?.map((lang, index) => (
+                        <span key={index}>
+                          {lang}{index !== coach.lang.length - 1 && " / "}
+                        </span>
+                      ))}
+                    </p>
+                  </li>
+
+                  <li className='d-flex gap-3'>
+                    <p className='bg-brand-02 text-white px-2 rounded-1'>評價</p>
+                    <p className='fw-bold'>
+                      {Array.from({ length: fullStars }).map((_, i) => (
+                        <i key={i} className="bi bi-star-fill text-brand-02 me-1" />
+                      ))}
+
+                      {halfStar && <i className="bi bi-star-half text-brand-02 me-1"></i>}
+
+                      {Array.from({ length: emptyStars }).map((_, i) => (
+                        <i key={i} className="bi bi-star text-brand-02 me-1" />
+                      ))}
+
+                      {coach.rate?.stars} ({coach.rate?.rateNum})
+                    </p>
+                  </li>
+
+                  <li>
+                    <p className='fw-bold d-inline'>JPY <span className='fs-2 mx-2'>{coach.charge?.toLocaleString()}</span> /hr 起</p>
+                  </li>
+
+                  <li className='d-flex align-items-center gap-3'>
+                    <Link
+                      className='
+                      fw-bold
+                      border-2
+                      border-brand-01
+                      rounded-pill
+                      btn
+                      
+                      order-coach
+                      '
+                      to='/booking'>
+                        預約教練
+                    </Link>
+
+                    <i
+                      onClick={() => dispatch(setIsFavorite(coach))}
+                      className={`
+                        bi
+                        ${ isFavorite ? 'bi-bookmark-fill' : 'bi-bookmark'}
+
+                        text-brand-01
+                        p-1
+
+                        coach-bookmark
+                      `} 
+                    />
+                  </li>
+
+                </ul>
+              </div>
+
+              <ul className='d-flex gap-3 text-gray-02 list-unstyled tag-ul'>
+                {coach.tag?.map(tag => <li key={tag}>#{tag}</li>)}
               </ul>
             </div>
+            
 
-            <div id="license" className="container tab-pane fade">
-              <div className='d-flex gap-3'>
-                <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
-                  <img src="https://images.unsplash.com/photo-1735114238008-89c9355ef8c6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-
-                  <h3>指導證照 LV.3</h3>
-                </div>
+          </div>
 
 
-                <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
-                  <img src="https://images.unsplash.com/photo-1735114238008-89c9355ef8c6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
 
-                  <h3>指導證照 LV.3</h3>
+          <hr className='my-5' />
+
+
+
+          <div className='col about-coach-col'>
+            <ul className="nav row row-cols-1 row-cols-md-5 g-4 m-auto mb-5 text-center">
+              <li className='col'>
+                <a className="active coach-detail-tab" data-bs-toggle="tab" href="#member">會員中心</a>
+              </li>
+
+              <li className='col'>
+                <a className="coach-detail-tab" onClick={openCalendar} data-bs-toggle="tab" href="#classes">預約課表</a>
+              </li>
+
+              <li className='col'>
+                <a className="coach-detail-tab" data-bs-toggle="tab" href="#exp">教練經歷</a>
+              </li>
+
+              <li className='col'>
+                <a className="coach-detail-tab" data-bs-toggle="tab" href="#license">教練證照</a>
+              </li>
+
+              <li className='col'>
+                <a className="coach-detail-tab" data-bs-toggle="tab" href="#photo">教學日常</a>
+              </li>
+            </ul>
+
+
+            <div className="tab-content mt-3">
+              <div id="member" className="tab-pane bg-white rounded-4 active tab-p">
+                <h6 className='lh-base'>
+                  &emsp;&emsp;{coach.description}
+                </h6>
+              </div>
+
+              <div id="classes" className="tab-pane fade">
+                <FullCalendar
+                  ref={calendarRef}
+                  plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin, bootstrap5Plugin]}
+                  headerToolbar={{
+                    left: "prev,next",
+                    center: "title",
+                    right: "today",
+                  }}
+                  events={coach.teachingSchedule}
+                  eventBackgroundColor='rgb(4, 59, 107)'
+                  aspectRatio={window.innerWidth < 768 ? 1 : 1.8}
+                />
+              </div>
+
+              <div id="exp" className="tab-pane bg-white rounded-4 tab-p fade">
+                
+                
+                <ul className='d-flex flex-column gap-2 m-0 exp-ul'>
+                  <li className='list-unstyled'>
+                    <h4 className='text-brand-01'>教練經歷</h4>
+                  </li>
+
+                  {coach.exp?.map(exp => <li key={exp}><h6 className='d-inline'>{exp}</h6></li>)}
+                </ul>
+              </div>
+
+
+
+
+              <div id="license" className="tab-pane fade">
+                <div className='d-flex flex-column flex-sm-row gap-3'>
+                  {coach.license?.map(license => {
+                    return (
+                      <div key={license.licenseName} className='d-flex flex-column justify-content-center align-items-center gap-3'>
+                        <img src={license.licenseImg} className='w-100' alt='lincense-picture' />
+
+                        <h3>{license.licenseName}</h3>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
-            </div>
 
-            <div id="photo" className="container tab-pane fade">
-              <div className='row row-cols-3'>
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
 
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
 
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
 
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
 
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
-
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
-
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
-
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
-                </div>
-
-                <div className='col p-1'>
-                  <img src="https://images.unsplash.com/photo-1737467016100-68cd7759d93c?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-100' alt="#" />
+              <div id="photo" className="tab-pane fade">
+                <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2'>
+                  {coach.img?.map((img, index) => {
+                    return (
+                      <div key={index} className='col daily-imges-col'> 
+                        <img src={img} className='w-100 h-100 daily-imges' alt='daily-picture' />
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
 
-        <div className='col pt-0 mt-5'>
-          <h3 className='text-center'>學員評價</h3>
+          <div className='col mt-5'>
+            <h3 className='text-center fw-bold mb-4'>學員評價</h3>
 
-          <ul className='mt-3 rate-ul'>
-            <li className='d-flex flex-column gap-3 bg-white p-3 rounded-4'>
-              <p>⭐⭐⭐⭐⭐</p>
+            <ul className='mt-3 list-unstyled'>
+              {coach.reviews?.map(review => {
+                const reviewfullStars = Math.floor(review.student.rate);
+                const reviewhalfStar = review.student.rate % 1 !== 0;
+                const reviewemptyStars = 5 - reviewfullStars - (reviewhalfStar ? 1 : 0);
 
-              <div className='d-flex flex-column gap-3'>
-                <h4>教練教學有趣而且非常注意我的安全！</h4>
 
-                <div className='d-flex align-items-center gap-3'>
-                  <div className='rounded-circle rate-student'></div>
+                return (
+                  <li key={review.id} className='d-flex flex-column gap-3 bg-white p-3 mb-4 rounded-4'>
+                    <p>
+                      {Array.from({ length: reviewfullStars }).map((_, i) => (
+                        <i key={i} className="bi bi-star-fill text-brand-02 me-1" />
+                      ))}
 
-                  <div>
-                    <p>雪怪<span className='ms-3 bg-brand-02 text-white py-1 px-3 rounded-3'>學員</span></p>
+                      {reviewhalfStar && <i className="bi bi-star-half text-brand-02 me-1" />}
 
-                    <p className='mt-3 text-gray-03'>2025/12/25</p>
-                  </div>
-                </div>
-              </div>
+                      {Array.from({ length: reviewemptyStars }).map((_, i) => (
+                        <i key={i} className="bi bi-star text-brand-02 me-1" />
+                      ))}
+                    </p>
 
-              <div className='d-flex flex-column gap-3 border-start border-error ps-3'>
-                <p className='text-gray-03'>教練回覆</p>
+                    <div className='d-flex flex-column gap-3'>
+                      <h5>{review.student.comment}</h5>
 
-                <h3>
-                  Ho！Ho！Ho！<br />
-                  我的學員絕對可以體會到滑雪的快樂！
-                </h3>
+                      <div className='d-flex align-items-center gap-3'>
+                        <div className='rounded-circle rate-profileImg' style={{backgroundImage: `url(${review.student.profileImg})`}} />
 
-                <div className='d-flex align-items-center gap-3'>
-                  <div className='rounded-circle rate-coach'></div>
+                        <div>
+                          <p>{review.student.name}<span className='ms-3 bg-brand-02 text-white py-1 px-3 rounded-3'>學員</span></p>
 
-                  <div>
-                    <p>聖誕老人<span className='ms-3 bg-error text-white py-1 px-3 rounded-3'>教練</span></p>
+                          <p className='mt-3 text-gray-03'>2025/12/25</p>
+                        </div>
+                      </div>
+                    </div>
 
-                    <p className='mt-3 text-gray-03'>2025/12/25</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+                    <div className='d-flex flex-column gap-3 border-start border-error ps-3'>
+                      <p className='text-gray-03'>教練回覆</p>
+
+                      <h5>{review.response.comment}</h5>
+
+                      <div className='d-flex align-items-center gap-3'>
+                        <div className='rounded-circle rate-profileImg' style={{backgroundImage: `url(${coach.profileImg})`}} />
+
+                        <div>
+                          <p>{coach.name}<span className='ms-3 bg-brand-02 text-white py-1 px-3 rounded-3'>教練</span></p>
+
+                          <p className='mt-3 text-gray-03'>2025/12/25</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

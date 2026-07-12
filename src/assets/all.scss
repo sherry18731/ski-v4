@@ -1,7 +1,12 @@
 @import "bootstrap/scss/functions";
 @import "./variables";
-@import "./variables-dark";
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/mixins";
 
-@import "../pages/home/Home";
-// @import '../pages/order/Order.scss';
+// body {
+//   padding-top: 102px;
+// }
+
+.box {
+  padding-top: 102px;
+}

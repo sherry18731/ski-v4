@@ -7,11 +7,20 @@ import Home from '../pages/home/Home';
 import Coach from '../pages/coach/Coach';
 import CoachPage from '../pages/coach/coachComps/coachPage/CoachPage';
 import SkiResortListPage from '../pages/skihouse/SkiResortListPage';
+import SkiResortDetailPage from '../pages/skihouse/SkiResortDetailPage';
 import SignInForm from '../pages/home/homeComps/SignInForm';
 import SignUpForm from '../pages/home/homeComps/SignUpForm';
 import ArticlePage from '../pages/article/ArticlePage';
 import AboutUs from '../pages/about/AboutUs';
 import NotFound from '../components/NotFound';
+import AdminLogin from '../pages/admin/AdminLogin';
+import OrderListPage from '../pages/admin/OrderListPage';
+import OrderDetailPage from '../pages/admin/OrderDetailPage';
+import AdminLayout from '../layout/AdminLayout';
+import UserCenter from '../pages/center/UserCenter';
+import MemberListPage from '../pages/admin/MemberListPage';
+import FavoritePage from '../pages/coach/coachComps/favoritePage/FavoritePage';
+// import FrontLayout from '../layout/FrontLayout';
 
 
 
@@ -43,16 +52,22 @@ const routes = [
       {
         path: 'coach',
         element:<Coach />,
-        children: [
-          {
-            path: ':id',
-            element: <CoachPage />
-          }
-        ]
+      },
+      {
+        path: 'coach/:id',
+        element: <CoachPage />
+      },
+      {
+        path: 'coach/favorites',
+        element: <FavoritePage />
       },
       {
         path:'ski-house',
-        element:<SkiResortListPage />
+        element: <SkiResortListPage />
+      },
+      {
+        path: 'ski-house/:id',
+        element: <SkiResortDetailPage />
       },
       {
         path: 'sign-in',
@@ -71,14 +86,41 @@ const routes = [
         element: <AboutUs />
       },
       {
-        path:'*',
-        element:<NotFound />
+        path: 'user-center',
+        element: <UserCenter />
       }
     ]
   },
   {
-    path:'/admin'
-  }
+    path:'*',
+    element:<NotFound />
+  },
+  {
+    path: '/adminLogin',
+    element: <AdminLogin />
+  },
+  {
+    path: '/admin',
+    element: <AdminLayout />,
+    children: [
+      {
+        path: '',
+        element: <OrderListPage />
+      },
+      {
+        path: 'orders',
+        element: <OrderListPage />
+      },
+      {
+        path: 'orders/:id',
+        element: <OrderDetailPage />
+      },
+      {
+        path: 'member-list',
+        element: <MemberListPage />
+      }
+    ]
+  },
 ]
 
 export default routes;

@@ -1,10 +1,17 @@
-import { createContext, useRef, useState } from 'react';
-import CoachList from './CoachList';
+import { useRef, useState } from 'react';
+import CoachList from './coachlist/CoachList';
 
 
 
+import { InputValue } from '../coachContext';
 
-export const InputValue = createContext({});
+
+
+import './SearchInput.scss'
+import { Link } from 'react-router';
+
+
+
 
 function SerchInput() {
   const sexRef = useRef(null);
@@ -13,29 +20,31 @@ function SerchInput() {
   const houseRef = useRef(null);
   const keyWordRef = useRef(null);
 
-  const [ allValue, setAllValue ] = useState({sex : '',
-                                              charge : '',
-                                              board : '',
-                                              house : '',
-                                              keyWord : ''});
+  const [ allValue, setAllValue ] = useState({
+    sex : '',
+    charge : '',
+    board : '',
+    house : '',
+    keyWord : ''
+  });
 
   
     
   return (
     <InputValue.Provider value={{allValue}}>
-      <div className='w-100 d-flex justify-content-center gap-3 mt-5'>
+      <div className='w-100 d-flex flex-lg-row flex-column justify-content-center gap-3 mt-5'>
         <select className="form-select w-auto" ref={sexRef}>
           <option value=''>性別</option>
-          <option value="male">男性</option>
-          <option value="female">女性</option>
+          <option value="男">男性</option>
+          <option value="女">女性</option>
         </select>
         
         <select className="form-select w-auto" ref={chargeRef}>
           <option value=''>收費</option>
-          <option value="feeLV1">10,000以下</option>
-          <option value="feeLV2">10,000 ~ 15,000</option>
-          <option value="feeLV3">15,000 ~ 20,000</option>
-          <option value="feeLV4">20,000 以上</option>
+          <option value="chargeLV1">10,000以下</option>
+          <option value="chargeLV2">10,000 ~ 15,000</option>
+          <option value="chargeLV3">15,000 ~ 20,000</option>
+          <option value="chargeLV4">20,000 以上</option>
         </select>
 
         <select className="form-select w-auto" ref={boardRef}>
@@ -54,9 +63,9 @@ function SerchInput() {
         </select>
 
 
-        <input defaultValue='' type="text" placeholder='🔎關鍵字...' ref={keyWordRef} />
+        <input className='form-control' defaultValue='' type="text" placeholder='🔎關鍵字...' ref={keyWordRef} />
 
-        <button className='btn btn-primary w-auto' onClick={() => {
+        <button className='btn btn-brand-01 search-btn' onClick={() => {
           setAllValue(pre => ({
             ...pre,
             sex : sexRef.current.value,
@@ -67,6 +76,14 @@ function SerchInput() {
             
           }));
         }}>搜尋</button>
+
+
+        <Link 
+          to='favorites'
+          className='btn btn btn-brand-01 py-2 search-btn'
+        >
+          收藏的教練
+        </Link>
       </div>
 
       

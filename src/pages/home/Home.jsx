@@ -1,31 +1,31 @@
 import BackToTopButton from '../../components/BackToTopButton';
 import BannerSection from './homeComps/BannerSection';
 import ServicesSection from './homeComps/ServicesSection';
-import SwiperSection from './homeComps/SwiperSection';
+import CoachesSection from './homeComps/CoachesSection';
 import SkiHouseSection from './homeComps/SkiHouseSection';
 import ArticleSection from './homeComps/ArticleSection';
 import FAQ from './homeComps/FAQ';
 
+import './Home.scss';
+
 function Home() {
 
   return (
-    <>
-      <main className="bg-gray-05">
-        <BackToTopButton />
+    <main className="bg-gray-05">
+      <BackToTopButton />
       {/* banner */}
-        <BannerSection />
+      <BannerSection />
       {/* 提供的服務 */}
-        <ServicesSection />
+      <ServicesSection />
       {/* 教練 */}          
-        <SwiperSection />
+      <CoachesSection />
       {/* 雪場 */}  
-        <SkiHouseSection />
+      <SkiHouseSection />
       {/* 文章 */}
-        <ArticleSection />
+      <ArticleSection />
       {/* 常見問題 */}
-        <FAQ />
-      </main>
-    </>
+      <FAQ />
+    </main>
   )
 }
 

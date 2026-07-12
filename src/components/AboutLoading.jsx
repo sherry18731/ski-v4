@@ -1,5 +1,6 @@
 import { useState } from "react"
 import ReactLoading from 'react-loading';
+import Swal from "sweetalert2";
 // import BounceLoader from "react-spinners/BounceLoader";
 
 const promiseSetTimeout = (status) => {
@@ -23,7 +24,12 @@ function AboutLoading() {
     try {
       await promiseSetTimeout(true)
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: "讀取失敗",
+        text: error.message,
+        icon: "error",
+        confirmButtonText: "確定"
+      });
     } finally {
       setLoadingState(false)
     }
@@ -34,20 +40,20 @@ function AboutLoading() {
     <h1>讀取效果</h1>
     <button type="button" onClick={fullScreenLoading} className="w-25">pin me to start</button>
     
-      { loadingState && (<div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'ragb(255, 255, 255, 0.5)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 1000,
-        backdropFilter: 'blur(4px)'
-      }
-      }>
+    { loadingState && (<div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'ragb(255, 255, 255, 0.5)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 1000,
+      backdropFilter: 'blur(4px)'
+    }
+    }>
       <ReactLoading type={'bubbles'} color={'#779ECB'} height={100} width={100} />
       {/* <BounceLoader
         color="#779ECB"
@@ -55,7 +61,7 @@ function AboutLoading() {
         size={60}
         speedMultiplier={1}
       /> */}
-      </div>) }
+    </div>) }
     
   </>)
 
