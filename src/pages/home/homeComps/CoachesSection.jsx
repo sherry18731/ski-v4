@@ -10,7 +10,7 @@ function CoachesSection() {
     {
       id: 1,
       name: "Rocky Wu",
-      image: "https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/skiing-coach-male-C-1.png?alt=media&token=a3fbb246-15b8-497e-ad39-9e9f61e8dddc",
+      image: "public/skiing-coach-1.png",
       description: "充滿活力的滑雪教練，用速度與挑戰點燃你的滑雪熱情，讓你越滑越快、越玩越嗨！",
       skills: ["單板","雙板"],
       place: "輕井澤王子飯店滑雪場"
@@ -18,7 +18,7 @@ function CoachesSection() {
     {
       id: 2,
       name: "Luna Chen",
-      image: "https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/skiing-coach-male-C-2.png?alt=media&token=a85ddc74-810d-403e-8ccc-dd10b0592519",
+      image: "public/skiing-coach-2.png",
       description: "細心又有耐心的滑雪教練，專門幫助初學者建立自信，讓你優雅自在地享受滑雪！",
       skills: ["雙板"],
       place: "北海道二世谷滑雪場"
@@ -26,7 +26,7 @@ function CoachesSection() {
     {
       id: 3,
       name: "Dash Liu",
-      image: "https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/skiing-coach-3.png?alt=media&token=e3838116-e08e-4439-9c8b-8102501fa699",
+      image: "public/skiing-coach-3.png",
       description: "穩扎穩打的滑雪教練，專長提升技巧與穩定性，讓你在雪道上更自信、更安全！",
       skills: ["單板"],
       place: "八甲田滑國際雪場滑雪場"
@@ -34,7 +34,7 @@ function CoachesSection() {
     {
       id: 4,
       name: "Rocky Wu",
-      image: "https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/skiing-coach-male-C-1.png?alt=media&token=a3fbb246-15b8-497e-ad39-9e9f61e8dddc",
+      image: "public/skiing-coach-1.png",
       description: "充滿活力的滑雪教練，用速度與挑戰點燃你的滑雪熱情，讓你越滑越快、越玩越嗨！",
       skills: ["單板","雙板"],
       place: "輕井澤王子飯店滑雪場"
@@ -42,7 +42,7 @@ function CoachesSection() {
     {
       id: 5,
       name: "Luna Chen",
-      image: "https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/skiing-coach-male-C-2.png?alt=media&token=a85ddc74-810d-403e-8ccc-dd10b0592519",
+      image: "public/skiing-coach-2.png",
       description: "細心又有耐心的滑雪教練，專門幫助初學者建立自信，讓你優雅自在地享受滑雪！",
       skills: ["雙板"],
       place: "北海道二世谷滑雪場"
@@ -50,7 +50,7 @@ function CoachesSection() {
     {
       id: 6,
       name: "Dash Liu",
-      image: "https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/skiing-coach-3.png?alt=media&token=e3838116-e08e-4439-9c8b-8102501fa699",
+      image: "public/skiing-coach-3.png",
       description: "穩扎穩打的滑雪教練，專長提升技巧與穩定性，讓你在雪道上更自信、更安全！",
       skills: ["單板"],
       place: "八甲田滑國際雪場滑雪場"
@@ -58,7 +58,7 @@ function CoachesSection() {
   ])
   
   return (
-    <div className="mt-xxl mb-xxl py-5" style={{background:"url('https://firebasestorage.googleapis.com/v0/b/homework-b5f67.appspot.com/o/homeSection3-bg.png?alt=media&token=99efd315-41d3-433c-8c2e-66bf9af483eb') no-repeat center center/cover"}}>
+    <div className="mt-xxl mb-xxl py-5" style={{background:"url('public/homeSection3-bg.png') no-repeat center center/cover"}}>
       <div className="container">
         <div className="row flex-column flex-md-row overflow-hidden">
           <div className="col-md-4 d-flex flex-column justify-content-center text-white ms-2 ms-md-0">
